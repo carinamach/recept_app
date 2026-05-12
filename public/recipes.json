@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "seed-001",
+      "title": "Miso butter morning eggs",
+      "description": "Silky custardy eggs whispering umami — the kind of breakfast you plate on ceramics and linger over.",
+      "category": "breakfast",
+      "cookTimeMinutes": 12,
+      "servings": 2,
+      "ingredients": [
+        { "amount": "4", "name": "large eggs" },
+        { "amount": "1 tbsp", "name": "white miso paste" },
+        { "amount": "1 tbsp", "name": "unsalted butter" },
+        { "amount": "2 tsp", "name": "soy sauce" },
+        { "amount": "1 tbsp", "name": "thinly sliced scallions" },
+        { "amount": "to taste", "name": "toasted sesame seeds" }
+      ],
+      "steps": [
+        { "text": "Whisk miso with a splash of warm water until smooth." },
+        { "text": "Melt butter in a non-stick pan over low heat; swirl in miso and soy sauce." },
+        { "text": "Crack in eggs and cook gently, tilting to set whites while keeping yolks silky." },
+        { "text": "Finish with scallions and sesame seeds. Serve immediately on warm rice." }
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=1600&q=80",
+      "favorited": true,
+      "ratingAverage": 4.8,
+      "ratingCount": 24,
+      "comments": [],
+      "createdAt": "2026-02-02T07:30:00.000Z",
+      "updatedAt": "2026-02-02T07:30:00.000Z"
+    },
+    {
+      "id": "seed-002",
+      "title": "Shoyu ramen with scallion oil",
+      "description": "Clear shoyu broth, springy noodles, and a glossy scallion aroma oil on top.",
+      "category": "lunch",
+      "cookTimeMinutes": 45,
+      "servings": 3,
+      "ingredients": [
+        { "amount": "900 ml", "name": "good chicken broth" },
+        { "amount": "3 tbsp", "name": "Japanese soy sauce" },
+        { "amount": "1 tbsp", "name": "mirin" },
+        { "amount": "3 portions", "name": "fresh ramen noodles" },
+        { "amount": "6", "name": "ramen eggs (ajitsuke tamago)" },
+        { "amount": "¼ cup", "name": "thinly sliced scallions" },
+        { "amount": "3 tbsp", "name": "neutral oil, for scallion oil" }
+      ],
+      "steps": [
+        { "text": "Simmer broth with soy sauce and mirin for 10 minutes; taste for balance." },
+        { "text": "Heat oil until just shimmering, pour over scallions in a heatproof bowl; cool." },
+        { "text": "Cook noodles per package; divide into bowls with hot broth." },
+        { "text": "Top with eggs, scallion oil, and extra scallions." }
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1600&q=80",
+      "favorited": false,
+      "ratingAverage": 4.6,
+      "ratingCount": 41,
+      "comments": [],
+      "createdAt": "2026-01-18T12:00:00.000Z",
+      "updatedAt": "2026-01-18T12:00:00.000Z"
+    },
+    {
+      "id": "seed-003",
+      "title": "Gochugaru-glazed salmon",
+      "description": "Honey-glossed heat, crisp edges, and a citrus finish for weeknight glamour.",
+      "category": "dinner",
+      "cookTimeMinutes": 25,
+      "servings": 4,
+      "ingredients": [
+        { "amount": "4", "name": "salmon fillets, skin-on" },
+        { "amount": "2 tbsp", "name": "gochugaru" },
+        { "amount": "2 tbsp", "name": "honey" },
+        { "amount": "2 tbsp", "name": "soy sauce" },
+        { "amount": "2 cloves", "name": "garlic, grated" },
+        { "amount": "1", "name": "lime, zested and juiced" },
+        { "amount": "1 tbsp", "name": "toasted sesame oil" }
+      ],
+      "steps": [
+        { "text": "Whisk glaze ingredients until cohesive." },
+        { "text": "Pat salmon dry; sear skin-side down in an oiled skillet until crispy." },
+        { "text": "Flip briefly, reduce heat, spoon glaze repeatedly until lacquered." },
+        { "text": "Rest 3 minutes; finish with lime zest." }
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1600&q=80",
+      "favorited": true,
+      "ratingAverage": 4.9,
+      "ratingCount": 18,
+      "comments": [],
+      "createdAt": "2026-03-08T17:45:00.000Z",
+      "updatedAt": "2026-03-08T17:45:00.000Z"
+    },
+    {
+      "id": "seed-004",
+      "title": "Yuzu panna cotta",
+      "description": "Quietly luxurious: milk cream set, ribbons of citrus, barely sweet.",
+      "category": "dessert",
+      "cookTimeMinutes": 20,
+      "servings": 6,
+      "ingredients": [
+        { "amount": "480 ml", "name": "heavy cream" },
+        { "amount": "120 ml", "name": "whole milk" },
+        { "amount": "½ cup", "name": "sugar" },
+        { "amount": "2 tsp", "name": "gelatin powder" },
+        { "amount": "2 tbsp", "name": "cold water" },
+        { "amount": "3 tbsp", "name": "yuzu juice" },
+        { "amount": "pinch", "name": "fine sea salt" }
+      ],
+      "steps": [
+        { "text": "Bloom gelatin in water for 5 minutes." },
+        { "text": "Warm cream, milk, sugar, and salt until steamy; off heat, whisk in gelatin." },
+        { "text": "Stir in yuzu juice; strain into ramekins; chill 4 hours." },
+        { "text": "Unmold or serve in glass; garnish with citrus supremes if desired." }
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1600&q=80",
+      "favorited": false,
+      "ratingAverage": 4.4,
+      "ratingCount": 9,
+      "comments": [],
+      "createdAt": "2026-04-01T19:15:00.000Z",
+      "updatedAt": "2026-04-01T19:15:00.000Z"
+    },
+    {
+      "id": "seed-005",
+      "title": "Iced jasmine oolong latte",
+      "description": "Floral lift, mellow tea tannin, and milk like silk over ice.",
+      "category": "drinks",
+      "cookTimeMinutes": 8,
+      "servings": 2,
+      "ingredients": [
+        { "amount": "240 ml", "name": "strong brewed jasmine tea, chilled" },
+        { "amount": "120 ml", "name": "oat milk (or dairy)" },
+        { "amount": "1 tbsp", "name": "brown sugar syrup" },
+        { "amount": "ice", "name": "large cubes" },
+        { "amount": "optional", "name": "thin lemon peel" }
+      ],
+      "steps": [
+        { "text": "Brew jasmine tea strong; chill completely." },
+        { "text": "Shake chilled tea with syrup until frothy." },
+        { "text": "Fill glasses with ice; pour tea three-quarters; float milk gently." },
+        { "text": "Stir before sipping; garnish with citrus oils if desired." }
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=1600&q=80",
+      "favorited": false,
+      "ratingAverage": 4.2,
+      "ratingCount": 11,
+      "comments": [],
+      "createdAt": "2026-04-21T09:05:00.000Z",
+      "updatedAt": "2026-04-21T09:05:00.000Z"
+    },
+    {
+      "id": "seed-006",
+      "title": "Charred eggplant rice bowl",
+      "description": "Smoky-soft eggplant draped over warm rice with quick pickles.",
+      "category": "lunch",
+      "cookTimeMinutes": 35,
+      "servings": 2,
+      "ingredients": [
+        { "amount": "2", "name": "medium eggplants" },
+        { "amount": "3 tbsp", "name": "miso-tahini glaze" },
+        { "amount": "2 cups", "name": "cooked short-grain rice" },
+        { "amount": "½ cup", "name": "quick-pickled cucumber" },
+        { "amount": "1", "name": "soft-boiled egg" },
+        { "amount": "to taste", "name": "shichimi togarashi" }
+      ],
+      "steps": [
+        { "text": "Broil eggplant until deeply charred and collapsed; scoop flesh." },
+        { "text": "Fold eggplant through warm glaze." },
+        { "text": "Pack rice in bowls; top with eggplant, pickles, halved egg." },
+        { "text": "Finish with togarashi and a drizzle of good-quality oil." }
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1600&q=80",
+      "favorited": false,
+      "ratingAverage": 4.7,
+      "ratingCount": 15,
+      "comments": [],
+      "createdAt": "2026-05-01T13:20:00.000Z",
+      "updatedAt": "2026-05-01T13:20:00.000Z"
+    }
+  ]
+}

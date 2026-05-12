@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply border-ink-200/60 dark:border-ink-700/70;
+  }
+
+  body {
+    /* Primär brödtext: nästan svart för AA mot parchment-50 */
+    @apply min-h-dvh bg-parchment-50 text-ink-900 antialiased transition-colors duration-300 dark:bg-ink-950 dark:text-parchment-100;
+  }
+
+  ::selection {
+    @apply bg-primary/35 text-ink-900;
+  }
+
+  .dark ::selection {
+    @apply bg-primary-muted/45 text-white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .grid-masonry-ish {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+    align-items: start;
+    gap: 1.35rem;
+  }
+}
