@@ -18,7 +18,7 @@ export default function Header() {
   const links = [
     { to: '/', label: 'Discover' },
     { to: '/recipes/browse', label: 'All recipes' },
-    { to: '/recipes/new', label: 'New recipe' },
+    { to: '/recipes/new', label: 'Add recipe' },
     { to: '/planner', label: 'Planner' },
     { to: '/shop', label: 'Shopping list' },
     { to: '/suggest', label: 'Ideas' },

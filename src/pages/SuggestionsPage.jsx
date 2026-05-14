@@ -37,11 +37,10 @@ export default function SuggestionsPage() {
         </span>
         <h1 className="font-display mt-3 text-[1.97rem] tracking-[-0.03em] text-ink-900 dark:text-white">Recipe ideas</h1>
         <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink-800 dark:text-parchment-100">
-          This build ships a deterministic “AI-style” muse (no keys, no billing) — swap the service later for{' '}
-          <code className="rounded bg-parchment-200 px-1 py-0.5 font-mono text-[0.7rem] font-medium text-ink-900 ring-1 ring-parchment-400/80 dark:bg-ink-800 dark:text-parchment-50 dark:ring-ink-600">
-            /api/suggest
-          </code>{' '}
-          with your model of choice.
+          Med <code className="rounded bg-parchment-200 px-1 font-mono text-[0.7rem] dark:bg-ink-800">npm run dev</code> och{' '}
+          <code className="rounded bg-parchment-200 px-1 font-mono text-[0.7rem] dark:bg-ink-800">OPENAI_API_KEY</code> i{' '}
+          <code className="rounded bg-parchment-200 px-1 font-mono text-[0.7rem] dark:bg-ink-800">.env</code> anropas OpenAI via backend.
+          Utan nyckel visas offline-förslag (mock).
         </p>
       </header>
 

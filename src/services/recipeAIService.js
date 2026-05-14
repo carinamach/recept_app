@@ -8,10 +8,10 @@ const TEMPLATES = [
 ];
 
 /**
- * Lightweight “AI-like” UX without network calls — swap for `/api/suggest`.
+ * Offline fallback when API saknas eller ingen OpenAI-nyckel.
  * @param {{ mood?: string, ingredients?: string, recipes?: Recipe[] }} opts
  */
-export async function fetchRecipeSuggestions(opts = {}) {
+async function fetchRecipeSuggestionsMock(opts = {}) {
   await new Promise((r) => setTimeout(r, 420));
 
   const seed = `${opts.mood ?? ''}|${opts.ingredients ?? ''}`.toLowerCase();
@@ -28,4 +28,49 @@ export async function fetchRecipeSuggestions(opts = {}) {
   ];
 
   return Array.from(new Set(picks)).slice(0, 3);
+}
+
+/**
+ * Anropar POST /api/suggest (OpenAI via Express) vid npm run dev; annars mock.
+ * @param {{ mood?: string, ingredients?: string, recipes?: Recipe[] }} opts
+ */
+export async function fetchRecipeSuggestions(opts = {}) {
+  try {
+    const res = await fetch('/api/suggest', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        mood: opts.mood ?? '',
+        ingredients: opts.ingredients ?? '',
+        recipeTitles: opts.recipes?.map((r) => r.title).filter(Boolean) ?? [],
+      }),
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (res.ok && Array.isArray(data.suggestions) && data.suggestions.length > 0) {
+      return data.suggestions.map(String).slice(0, 5);
+    }
+
+    if (res.status === 503 && data.error === 'no_api_key') {
+      return fetchRecipeSuggestionsMock(opts);
+    }
+
+    if (!res.ok) {
+      const msg =
+        typeof data.message === 'string'
+          ? data.message
+          : typeof data.error === 'string'
+            ? data.error
+            : `Fel från servern (${res.status})`;
+      throw new Error(msg);
+    }
+  } catch (e) {
+    if (e instanceof TypeError) {
+      return fetchRecipeSuggestionsMock(opts);
+    }
+    throw e;
+  }
+
+  return fetchRecipeSuggestionsMock(opts);
 }

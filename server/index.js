@@ -4,6 +4,8 @@
 import 'dotenv/config';
 import express from 'express';
 import fs from 'fs/promises';
+
+import { openAISuggestRecipes } from './suggestOpenAI.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -45,6 +47,42 @@ app.get('/api/recipes', async (_req, res) => {
   } catch (e) {
     console.error(e);
     res.status(500).json({ error: e instanceof Error ? e.message : 'read failed' });
+  }
+});
+
+/**
+ * POST /api/suggest — recipe ideas via OpenAI (OPENAI_API_KEY in .env).
+ * Body: { mood?, ingredients?, recipeTitles?: string[] }
+ */
+app.post('/api/suggest', async (req, res) => {
+  try {
+    if (!process.env.OPENAI_API_KEY) {
+      res.status(503).json({
+        error: 'no_api_key',
+        message: 'Lägg OPENAI_API_KEY i .env och starta om servern (npm run dev).',
+      });
+      return;
+    }
+
+    const body = req.body || {};
+    const recipeTitles = Array.isArray(body.recipeTitles) ? body.recipeTitles : [];
+
+    const suggestions = await openAISuggestRecipes({
+      mood: typeof body.mood === 'string' ? body.mood : '',
+      ingredients: typeof body.ingredients === 'string' ? body.ingredients : '',
+      recipeTitles,
+    });
+
+    res.json({ suggestions });
+  } catch (e) {
+    /** @type {any} */
+    const err = e;
+    if (err.code === 'NO_KEY') {
+      res.status(503).json({ error: 'no_api_key', message: err.message });
+      return;
+    }
+    console.error('[api/suggest]', e);
+    res.status(500).json({ error: e instanceof Error ? e.message : 'suggest failed' });
   }
 });
 
