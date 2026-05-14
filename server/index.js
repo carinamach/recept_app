@@ -13,6 +13,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const DATA_PATH = path.join(ROOT, 'data', 'recipes.json');
 const SEED_PATH = path.join(ROOT, 'public', 'recipes.json');
+const DIST_PATH = path.join(ROOT, 'dist');
+const isProduction = process.env.NODE_ENV === 'production';
 
 async function ensureDataFile() {
   await fs.mkdir(path.dirname(DATA_PATH), { recursive: true });
@@ -39,6 +41,10 @@ async function writePayload(obj) {
 
 const app = express();
 app.use(express.json({ limit: '8mb' }));
+
+if (isProduction) {
+  app.use(express.static(DIST_PATH));
+}
 
 app.get('/api/recipes', async (_req, res) => {
   try {
@@ -107,6 +113,16 @@ app.put('/api/recipes', async (req, res) => {
 });
 
 const PORT = Number(process.env.RECIPES_API_PORT || process.env.PORT) || 3021;
+
+if (isProduction) {
+  app.get('*', (req, res) => {
+    if (req.path.startsWith('/api')) {
+      res.status(404).json({ error: 'not_found' });
+      return;
+    }
+    res.sendFile(path.join(DIST_PATH, 'index.html'));
+  });
+}
 
 const server = app.listen(PORT, () => {
   console.log(`[recept-api] http://localhost:${PORT}  →  ${path.relative(ROOT, DATA_PATH)}`);
